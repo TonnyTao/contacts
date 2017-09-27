@@ -1,0 +1,148 @@
+/* Variables */
+$gray: #4d4d4d;
+$card-background: #f4f4f4;
+
+$phone-screen: 768px;
+
+/* Globel
+========================================================================== */
+
+* {
+  max-width: 100%;
+}
+
+body {
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-smoothing: antialiased;
+  color: $gray;
+  margin: 0 auto;
+  word-wrap: break-word;
+
+  @media (max-width: $phone-screen) {
+    background: $card-background;
+  }
+}
+
+/* Home
+========================================================================== */
+
+.container {
+  width: 40%;
+  margin: 40px auto;
+  background: $card-background;
+  text-align: center;
+  border-radius: 1px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media (max-width: $phone-screen) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.search_bar {
+  width: 80%;
+}
+
+.search_bar input {
+  height: 40px;
+  width: 100%;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+ul.contacts_list {
+  width: 80%;
+  padding: 0;
+}
+
+ul.contacts_list li {
+  min-height: 40px;
+  
+  list-style-type: none;
+  border-bottom: 1px dotted $gray; 
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statistic {
+  margin-top: 50px;
+}
+
+/* Card
+========================================================================== */
+
+.card_container {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height:100vh;
+  text-align: center;
+}
+
+.card_container ul {
+  list-style-type: none;
+  padding: 0;
+  max-width: 100%;
+}
+
+.card_container li {
+  margin-bottom: 10px;
+}
+
+.card_container .material-icons, .card_container li a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.card_container .material-icons {
+  margin-right:5px;
+}
+
+.card_container li a {
+  max-width: 100%;
+}
+
+/*Old way vertical center */
+.card_container:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.card {
+  display: inline-block;
+  vertical-align: middle;
+
+  background: white;
+  width: 50%;
+  border: 3px white solid;
+  border-radius: 5px;
+
+  @media (max-width: $phone-screen) {
+    width: 96%;
+  }
+}
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card_info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card_user_info {
+  text-align: left;
+}
