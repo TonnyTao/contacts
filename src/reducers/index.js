@@ -5,8 +5,6 @@ import initialState from './initialState';
 export default function reducer(state = initialState, action) {
   let newState;
   
-  console.log(JSON.stringify(action), JSON.stringify(state.order))
-
   switch (action.type) {
     case UPDATE_LIST:
       newState = {...state, contacts: action.contacts};
