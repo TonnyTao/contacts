@@ -1,10 +1,11 @@
-import {FETCH_CONTACTS, SEARCH_CONTACTS, UPDATE_LIST, SHOW_BUSINESS_CARD, HIDE_BUSINESS_CARD, UPDATE_SPINNER} from '../constants/actionTypes';
+import {FETCH_CONTACTS, SEARCH_CONTACTS, SORT_CONTACTS, UPDATE_LIST, SHOW_BUSINESS_CARD, HIDE_BUSINESS_CARD, UPDATE_SPINNER} from '../constants/actionTypes';
+import {ORDER_DEFAULT, ORDER_DESC, ORDER_ASC} from '../constants/orders';
 import initialState from './initialState';
 
 export default function reducer(state = initialState, action) {
   let newState;
   
-  console.log(action.toString(), state)
+  console.log(JSON.stringify(action), JSON.stringify(state.order))
 
   switch (action.type) {
     case UPDATE_LIST:
@@ -14,6 +15,11 @@ export default function reducer(state = initialState, action) {
 
     case SEARCH_CONTACTS:
       newState = {...state, target: action.target};
+      
+      return newState;
+
+    case SORT_CONTACTS:
+      newState = {...state, order: nextSortValue(state)};
       
       return newState;
 
@@ -35,4 +41,13 @@ export default function reducer(state = initialState, action) {
     default:
       return state;
   }
+}
+
+
+function nextSortValue(state){
+  const orders = [ORDER_DEFAULT, ORDER_ASC, ORDER_DESC];
+
+  const index = orders.findIndex(x=>x==state.order);
+
+  return orders[(index+1)%3];
 }

@@ -31,6 +31,12 @@ export function filterList(target="") {
   }
 }
 
+export function sortList() {
+  return {
+    type: types.SORT_CONTACTS
+  };
+}
+
 
 export function showBusinessCard(selectedContact) {
   return {

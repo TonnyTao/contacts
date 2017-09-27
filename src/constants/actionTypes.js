@@ -1,4 +1,5 @@
 export const SEARCH_CONTACTS = 'SEARCH_CONTACTS';
+export const SORT_CONTACTS = 'SORT_CONTACTS';
 
 export const UPDATE_LIST = 'UPDATE_LIST';
 
