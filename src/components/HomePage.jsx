@@ -34,7 +34,7 @@ const HomePage = ({contacts, target, isLoading, selectedContact, order, actions}
         selectedContact={selectedContact} 
       />
 
-      { isLoading ? <ReactLoading type="bubbles" delay={0} color="#444" /> : null}
+      { isLoading && <ReactLoading type="bubbles" delay={0} color="#444" /> }
       
       <ul className="contacts_list">
           {itemsToShow.map((contact) => {
@@ -52,15 +52,15 @@ const HomePage = ({contacts, target, isLoading, selectedContact, order, actions}
           })}
       </ul>
 
-      {itemsToShow.length>1 ? (
+      {itemsToShow.length>1 && (
         <a className="sort" onClick={actions.sortList}>
           <i className="material-icons">sort_by_alpha</i>
         </a>
-      ) : null}
+      )}
 
       <p className="statistic">{statisticText}</p>
 
-      { selectedContact.id ? <BusinessCard hideBusinessCard={actions.hideBusinessCard} {...selectedContact} /> : null}
+      { selectedContact.id  && <BusinessCard hideBusinessCard={actions.hideBusinessCard} {...selectedContact} /> }
     </div>
   );
 };

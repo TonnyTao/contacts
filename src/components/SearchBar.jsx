@@ -9,16 +9,16 @@ const SearchBar = (props) => {
     <div className="search_bar">
       
       <input 
-        type="text" 
-        value={target} 
+        type="text"
+        value={target}
         onChange={ (event) => {
             props.filterList(event.target.value)
-        }} 
-        {...readonly} 
+        }}
+        {...readonly}
       />
 
     </div>
-  ); 
+  );
 };
 
 export default SearchBar;

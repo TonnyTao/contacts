@@ -13,33 +13,33 @@ const BusinessCard = ({name, username, email, website, phone, company, hideBusin
 
           <div className="card_info">
             <ul className="card_user_info">
-              {username ? 
+              {username && (
                 <li>
                   <i className="material-icons">face</i>
                   <a>{username}</a>
                 </li>
-              : null}
+              )}
 
-              {email ? 
+              {email && (
                 <li>
                   <i className="material-icons">email</i>
                   <a>{email}</a>
                 </li>
-              : null}
+              )}
 
-              {website ? 
+              {website && (
                 <li>
                   <i className="material-icons">link</i>
                   <a>{website}</a>
                 </li>
-              : null}
+              )}
 
-              {phone ? 
+              {phone && (
                 <li>
                   <i className="material-icons">phone</i>
                   <a>{phone}</a>
                 </li>
-              : null}
+              )}
             </ul>
             
             <div className="card_company_info">
