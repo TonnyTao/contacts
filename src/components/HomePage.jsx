@@ -8,7 +8,7 @@ import {ORDER_DEFAULT, ORDER_DESC, ORDER_ASC} from '../constants/orders';
 
 const HomePage = ({contacts, target, isLoading, selectedContact, order, actions}) => {
 
-  let itemsToShow = target=="" ? [...contacts] : contacts.filter(item => item.name.startsWith(target));
+  let itemsToShow = target=="" ? contacts : contacts.filter(item => item.name.startsWith(target));
   
   const statistic = itemsToShow.reduce((result, {name}) => {
     const firstLetter = name.substr(0, 1).toUpperCase();
@@ -60,7 +60,7 @@ const HomePage = ({contacts, target, isLoading, selectedContact, order, actions}
 
       <p className="statistic">{statisticText}</p>
 
-      { selectedContact.id  && <BusinessCard hideBusinessCard={actions.hideBusinessCard} {...selectedContact} /> }
+      { selectedContact.id && <BusinessCard hideBusinessCard={actions.hideBusinessCard} {...selectedContact} /> }
     </div>
   );
 };
@@ -68,7 +68,7 @@ const HomePage = ({contacts, target, isLoading, selectedContact, order, actions}
 function sort(array, order) {
   if (order == ORDER_DEFAULT) return array
 
-  return array.sort((a, b) => {
+  return [...array].sort((a, b) => {
     const text1 = `${a.name}${a.company.name}`.toUpperCase();
     const text2 = `${b.name}${b.company.name}`.toUpperCase();
 
