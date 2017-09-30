@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BusinessCard = ({name, username, email, website, phone, company, hideBusinessCard}) => {
 
@@ -56,3 +57,13 @@ const BusinessCard = ({name, username, email, website, phone, company, hideBusin
 };
 
 export default BusinessCard;
+
+BusinessCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  website: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  hideBusinessCard: PropTypes.func.isRequired,
+};

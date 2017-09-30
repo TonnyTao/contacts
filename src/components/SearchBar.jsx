@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SearchBar = (props) => {
   const {target, isLoading, selectedContact} = props;
@@ -22,3 +23,9 @@ const SearchBar = (props) => {
 };
 
 export default SearchBar;
+
+SearchBar.propTypes = {
+  target: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  selectedContact: PropTypes.object.isRequired,
+};

@@ -2,6 +2,7 @@ import React from 'react';
 
 import SearchBar from './SearchBar';
 import ReactLoading from 'react-loading'
+import PropTypes from 'prop-types';
 
 import BusinessCard from './BusinessCard'
 import {ORDER_DEFAULT, ORDER_DESC, ORDER_ASC} from '../constants/orders';
@@ -41,10 +42,10 @@ const HomePage = ({contacts, target, isLoading, selectedContact, order, actions}
             let itemClick = actions.showBusinessCard.bind(this, contact);
 
             return (
-              <li 
+              <li
                 key={contact.id}
                 data={contact}
-                onClick={itemClick} 
+                onClick={itemClick}
               >
                 {contact.name} - {contact.company.name}
               </li>
@@ -83,3 +84,12 @@ function sort(array, order) {
 }
 
 export default HomePage;
+
+HomePage.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  target: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  selectedContact: PropTypes.object.isRequired,
+  order: PropTypes.string.isRequired,
+  actions: PropTypes.array.isRequired
+};

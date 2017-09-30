@@ -7,7 +7,6 @@ import Fetch from 'isomorphic-fetch';
 import * as creators from '../actions/actionCreators';
 import HomePage from '../components/HomePage';
 
-
 class HomePageContainer extends React.Component {
   
   componentDidMount(){
