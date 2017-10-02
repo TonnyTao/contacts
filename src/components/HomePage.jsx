@@ -91,5 +91,5 @@ HomePage.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   selectedContact: PropTypes.object.isRequired,
   order: PropTypes.string.isRequired,
-  actions: PropTypes.array.isRequired
+  actions: PropTypes.object.isRequired
 };
